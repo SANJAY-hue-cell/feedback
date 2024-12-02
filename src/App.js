@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react';
+import './App.css' ;
+import Header from './components/Header';
+import Feedback from './components/Feedback';
+import { Contexts } from './context/OpenContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Import CSS
+import { Routes , Route } from 'react-router-dom';
+import Responses from './components/Responses';
+import axios from 'axios';
+
+
+axios.defaults.baseURL = 'http://localhost:8000';
+axios.withCredentials = true
+
 
 function App() {
+
+  const {questions} = useContext(Contexts) ;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <ToastContainer position='bottom-right'/>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Feedback /> }></Route>
+        <Route path='/responses' element={<Responses />}></Route>
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

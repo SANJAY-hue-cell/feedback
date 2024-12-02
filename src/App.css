@@ -1,38 +1,36 @@
-.App {
-  text-align: center;
+input[type="range"] {
+  -webkit-appearance: none;  /* Remove default styles for Webkit browsers (Chrome, Safari) */
+  -moz-appearance: none;     /* Remove default styles for Firefox */
+  appearance: none;          /* For other browsers */
+  width: 100%;               /* Full width */
+  height: 8px;              /* Track height */
+  background: black;       /* Light grey color for track */
+  border-radius: 5px;       /* Rounded corners */
+  cursor: pointer;          /* Pointer cursor when hovering */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #ff5722;       /* Orange color for thumb */
+  border-radius: 50%;        /* Round thumb */
+  border: none;
+  cursor: grab;              /* Cursor when hovering over the thumb */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+textarea:focus{
+  outline: none !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.navbar{
+background: #000 !important;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.response-card{
+  background: #fff !important ;
+  color: #000 !important;
 }
